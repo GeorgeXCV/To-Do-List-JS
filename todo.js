@@ -65,5 +65,27 @@ var handlers = {
     },
     toggleAll: function() {
         todoList.toggleAll(); 
+    },
+    addTodo: function() {
+     var addTodoTextInput =  document.getElementById('addTodoTextInput');
+     todoList.addTodo(addTodoTextInput.value);
+     addTodoTextInput.value = '';
+    },
+    changeTodo: function() {
+        var changeTodoPostionInput = document.getElementById('changeTodoPositionInput')
+        var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+        todoList.changeTodo(changeTodoPostionInput.valueAsNumber, changeTodoTextInput.value);
+        changeTodoPostionInput.value = '';
+        changeTodoTextInput.value = '';
+    },
+    deleteTodo: function() {
+        var deleteTodoPostionInput = document.getElementById('deleteTodoPositionInput')
+        todoList.deleteTodo(deleteTodoPostionInput.valueAsNumber);
+        deleteTodoPostionInput.value = '';
+    },
+    toggleCompleted: function() {
+        var toggleCompletedPostionInput = document.getElementById('toggleCompletedPositionInput')
+        todoList.toggleCompleted(toggleCompletedPostionInput.valueAsNumber);
+        toggleCompletedPostionInput.value = '';
     }
 };
